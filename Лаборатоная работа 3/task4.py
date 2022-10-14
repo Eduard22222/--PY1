@@ -11,3 +11,4 @@ while month < 10:
     need_money += - a
     month += 1
 print(round(need_money))
+
