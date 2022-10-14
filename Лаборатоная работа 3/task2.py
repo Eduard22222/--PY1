@@ -9,3 +9,4 @@ a = list_numbers.index(max_i)
 list_numbers[a], list_numbers[-1] = list_numbers[-1], list_numbers[a]
 
 print(list_numbers)
+
