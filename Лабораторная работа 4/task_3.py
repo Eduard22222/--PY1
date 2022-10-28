@@ -2,7 +2,7 @@ def delete(list_, index=None):
     if index is None:
         list_11 = list_[:-1]
         return list_11
-    elif index <= 0:
+    elif index < 0:
         list_1 = list_[:len(list_) + index]
         list_2 = list_[len(list_) + index + 1:]
         return list_1 + list_2
