@@ -19,4 +19,3 @@ def system_of_calculation(num_list: list) -> list:
 test_ = range(16)
 pprint(system_of_calculation(test_))
 
-
