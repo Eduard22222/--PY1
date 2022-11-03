@@ -1,4 +1,3 @@
-
 def get_count_char(str_):
     DEFAULT_COUNT = 0
     dict_word = {}
@@ -20,19 +19,14 @@ def get_count_char(str_):
     return dict_word
 
 
-def percent(str_, dict_):
+def percent(str_):
     DEFAULT_COUNT = 0
     dict_new = {}
-    dict_ = dict(dict_)
-    sum_ = sum(get_count_char(str_).values())
-    for key, value in dict_.items():
-        if key in get_count_char(str_):
-            sym_count = get_count_char(str_).get(key)
-            persent_ = (sym_count / sum_) * 100
-            dict_new.setdefault(key, DEFAULT_COUNT)
-            dict_new[key] = dict_new.get(key, DEFAULT_COUNT) + persent_
-        else:
-            dict_new.setdefault(key, DEFAULT_COUNT)
+    sum_ = sum(get_count_char(str_).values()) # Здесь функция get_count_char вызывается для подсчета общего количества символов
+    for key, value in get_count_char(str_).items():
+        persent_ = (value / sum_) * 100
+        dict_new.setdefault(key, DEFAULT_COUNT)
+        dict_new[key] = dict_new.get(key, DEFAULT_COUNT) + persent_
     return dict_new
 
 
@@ -44,13 +38,4 @@ main_str = """
 
 print(get_count_char(main_str), type(get_count_char(main_str)))
 
-dict_sym = {
-    "а": 0,
-    "б": 0,
-    "p": 0,
-    "1": 0,
-    "у": 0,
-    "u": 0
-}
-print(percent(main_str, dict_sym))
-
+print(percent(main_str))
